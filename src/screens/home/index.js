@@ -31,8 +31,7 @@ class Home extends Component {
           <View style={{ marginBottom: 80 }}>
             <Button
               style={{ backgroundColor: "#6FAF98", alignSelf: "center" }}
-              onPress={() => this.props.navigation.navigate("NHCheckbox")}
-            >
+              onPress={() => this.props.navigation.navigate("NHCheckbox")}>
               <Text>Lets Eat!</Text>
             </Button>
           </View>

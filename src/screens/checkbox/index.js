@@ -70,14 +70,10 @@ class NHCheckbox extends Component {
     });
   }
   render() {
-    return (
-      <Container style={styles.container}>
+    return <Container style={styles.container}>
         <Header>
           <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
+            <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
               <Icon name="menu" />
             </Button>
           </Left>
@@ -89,88 +85,56 @@ class NHCheckbox extends Component {
 
         <Content>
           <ListItem button onPress={() => this.toggleSwitch1()}>
-            <CheckBox
-              checked={this.state.checkbox1}
-              onPress={() => this.toggleSwitch1()}
-            />
+            <CheckBox checked={this.state.checkbox1} onPress={() => this.toggleSwitch1()} />
             <Body>
               <Text>American</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch2()}>
-            <CheckBox
-              color="indigo"
-              checked={this.state.checkbox2}
-              onPress={() => this.toggleSwitch2()}
-            />
+            <CheckBox color="indigo" checked={this.state.checkbox2} onPress={() => this.toggleSwitch2()} />
             <Body>
               <Text>Chinese</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch3()}>
-            <CheckBox
-              color="green"
-              checked={this.state.checkbox3}
-              onPress={() => this.toggleSwitch3()}
-            />
+            <CheckBox color="green" checked={this.state.checkbox3} onPress={() => this.toggleSwitch3()} />
             <Body>
               <Text>Greek</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch4()}>
-            <CheckBox
-              color="blue"
-              checked={this.state.checkbox4}
-              onPress={() => this.toggleSwitch4()}
-            />
+            <CheckBox color="blue" checked={this.state.checkbox4} onPress={() => this.toggleSwitch4()} />
             <Body>
               <Text>Indian</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch5()}>
-            <CheckBox
-              color="orange"
-              checked={this.state.checkbox5}
-              onPress={() => this.toggleSwitch5()}
-            />
+            <CheckBox color="orange" checked={this.state.checkbox5} onPress={() => this.toggleSwitch5()} />
             <Body>
               <Text>Italian</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch6()}>
-            <CheckBox
-              color="brown"
-              checked={this.state.checkbox6}
-              onPress={() => this.toggleSwitch6()}
-            />
+            <CheckBox color="brown" checked={this.state.checkbox6} onPress={() => this.toggleSwitch6()} />
             <Body>
               <Text>Japanese</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch7()}>
-            <CheckBox
-              color="violet"
-              checked={this.state.checkbox7}
-              onPress={() => this.toggleSwitch7()}
-            />
+            <CheckBox color="violet" checked={this.state.checkbox7} onPress={() => this.toggleSwitch7()} />
             <Body>
               <Text>Korean</Text>
             </Body>
           </ListItem>
           <ListItem button onPress={() => this.toggleSwitch8()}>
-            <CheckBox
-              color="red"
-              checked={this.state.checkbox8}
-              onPress={() => this.toggleSwitch8()}
-            />
+            <CheckBox color="red" checked={this.state.checkbox8} onPress={() => this.toggleSwitch8()} />
             <Body>
               <Text>Mexican</Text>
             </Body>
           </ListItem>
-          <Rounded />
         </Content>
-      </Container>
-    );
+        <Rounded style={{ backgroundColor: "#FFF", alignSelf: "left" }} onPress={() => this.props.navigation.navigate("SimpleDeck")} />
+      </Container>;
   }
 }
 

@@ -18,10 +18,7 @@ class Rounded extends Component {
     return (
       <Container style={styles.container}>
         <Content padder style={{ backgroundColor: "#FFF", padding: 20 }}>
-          <Button
-          rounded info style={styles.mb15}
-          onPress={() => this.props.navigation.navigate("NHCheckbox")}
-          >
+          <Button rounded info style={styles.mb15} onPress={this.props.onPress}>
             <Text>Next!</Text>
           </Button>
         </Content>
