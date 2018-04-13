@@ -17,6 +17,7 @@ import {
   Body
 } from "native-base";
 import styles from "./styles";
+import Rounded from "../button/rounded";
 
 const cardOne = require("../../../assets/swiper-1.png");
 const cardTwo = require("../../../assets/swiper-2.png");
@@ -47,6 +48,23 @@ const cards = [
 ];
 
 class SimpleDeck extends Component {
+  state = {
+    //swiping right will add to restaurants array and send to database
+    restaurants: []
+  };
+  
+  componentDidMount() {
+    this.getResults();
+  }
+
+  getResults = () => {
+    console.log('get results')
+    // API.getResults()
+    //   .then(res =>
+    //   //generate cards
+    //   )
+  }
+
   render() {
     return (
       <Container style={styles.container}>
@@ -68,7 +86,7 @@ class SimpleDeck extends Component {
             looping={false}
             renderEmpty={() =>
               <View>
-                <Text>Over</Text>
+                <Text>No more cards. Press next!</Text>
               </View>}
             renderItem={item =>
               <Card style={{ elevation: 3 }}>
@@ -103,6 +121,10 @@ class SimpleDeck extends Component {
               </Card>}
           />
         </View>
+        <Rounded
+          style={{ backgroundColor: "#FFF", alignSelf: "left" }}
+          onPress={() => this.props.navigation.navigate("NHListThumbnail")}
+        />
       </Container>
     );
   }

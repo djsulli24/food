@@ -15,6 +15,7 @@ import {
 } from "native-base";
 import styles from "./styles";
 import Rounded from "../button/rounded";
+import RoundedTextBox from "../form/rounded";
 
 class NHCheckbox extends Component {
   constructor(props) {
@@ -85,7 +86,7 @@ class NHCheckbox extends Component {
 
         <Content>
           <ListItem button onPress={() => this.toggleSwitch1()}>
-            <CheckBox checked={this.state.checkbox1} onPress={() => this.toggleSwitch1()} />
+            <CheckBox value="american" checked={this.state.checkbox1} onPress={() => this.toggleSwitch1()} />
             <Body>
               <Text>American</Text>
             </Body>
@@ -133,6 +134,7 @@ class NHCheckbox extends Component {
             </Body>
           </ListItem>
         </Content>
+        <RoundedTextBox />
         <Rounded style={{ backgroundColor: "#FFF", alignSelf: "left" }} onPress={() => this.props.navigation.navigate("SimpleDeck")} />
       </Container>;
   }

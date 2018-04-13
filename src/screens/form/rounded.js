@@ -15,26 +15,37 @@ import {
 } from "native-base";
 import styles from "./styles";
 
-class Rounded extends Component {
+class RoundedTextBox extends Component {
+  //from http://facebook.github.io/react-native/docs/textinput.html
+  constructor(props) {
+    super(props);
+    this.state = { text: "Enter zipcode" };
+  }
+
+  //from Wes videos
+  // zipRef = React.createRef();
+
+  // createZip = event => {
+  //   event.preventDefault();
+  //   const zip = {
+  //     zip: this.zipRef.value.value
+  //   };
+  //   this.props.addZip(zip);
+  // };
+
   render() {
     return (
       <Container style={styles.container}>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Rounded</Title>
-          </Body>
-          <Right />
-        </Header>
-
         <Content padder>
           <Form>
             <Item rounded>
-              <Input placeholder="Rounded Textbox" />
+              <Input
+                keyboardType="numeric"
+                maxLength={5}
+                placeholder="Enter zipcode"
+                onChangeText={zip => this.setState({ zip })}
+                value={this.state.zip}
+              />
             </Item>
           </Form>
         </Content>
@@ -43,4 +54,4 @@ class Rounded extends Component {
   }
 }
 
-export default Rounded;
+export default RoundedTextBox;

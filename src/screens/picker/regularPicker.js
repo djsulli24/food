@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { Component } from "react";
 import {
   Container,
@@ -13,6 +14,7 @@ import {
   Form
 } from "native-base";
 import styles from "./styles";
+import Rounded from "../button/rounded";
 
 const Item = Picker.Item;
 
@@ -20,14 +22,25 @@ class RegularPicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected1: "key1"
+      cuisine: "key0",
+      distance: "key0"
     };
   }
-  onValueChange(value: string) {
-    this.setState({
-      selected1: value
-    });
-  }
+
+  postSelections = () => {
+    console.log(this.state.cuisine);
+    console.log(this.state.distance);
+    // saveSelections: function(selectionData) {
+    // return axios.post("/api/selection", selectionData);
+    // }
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.postSelections();
+    this.props.navigation.navigate("SimpleDeck");
+  };
+
   render() {
     return (
       <Container style={styles.container}>
@@ -38,7 +51,7 @@ class RegularPicker extends Component {
             </Button>
           </Left>
           <Body style={{ flex: 3 }}>
-            <Title>Regular</Title>
+            <Title>Please make your selections</Title>
           </Body>
           <Right />
         </Header>
@@ -47,19 +60,40 @@ class RegularPicker extends Component {
           <Form>
             <Picker
               mode="dropdown"
-              iosHeader="Select your SIM"
               iosIcon={<Icon name="ios-arrow-down-outline" />}
               style={{ width: undefined }}
-              selectedValue={this.state.selected1}
-              onValueChange={this.onValueChange.bind(this)}
+              selectedValue={this.state.cuisine}
+              onValueChange={value => this.setState({ cuisine: value })}
             >
-              <Item label="Wallet" value="key0" />
-              <Item label="ATM Card" value="key1" />
-              <Item label="Debit Card" value="key2" />
-              <Item label="Credit Card" value="key3" />
-              <Item label="Net Banking" value="key4" />
+              <Item label="Cuisine" value="key0" />
+              <Item label="American" value="american" />
+              <Item label="Chinese" value="chinese" />
+              <Item label="Greek" value="greek" />
+              <Item label="Indian" value="indian" />
+              <Item label="Japanese" value="japanese" />
+              <Item label="Korean" value="korean" />
+              <Item label="Mexican" value="mexican" />
             </Picker>
           </Form>
+          <Form>
+            <Picker
+              mode="dropdown"
+              iosIcon={<Icon name="ios-arrow-down-outline" />}
+              style={{ width: undefined }}
+              selectedValue={this.state.distance}
+              onValueChange={value => this.setState({ distance: value })}
+            >
+              <Item label="Distance (miles)" value="key0" />
+              <Item label="5" value={5} />
+              <Item label="10" value={10} />
+              <Item label="15" value={15} />
+              <Item label="20" value={20} />
+            </Picker>
+          </Form>
+          <Rounded
+            style={{ backgroundColor: "#FFF", alignSelf: "left" }}
+            onPress={this.handleSubmit}
+          />
         </Content>
       </Container>
     );
