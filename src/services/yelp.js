@@ -4,7 +4,7 @@ import axios from 'axios';
 const api = axios.create({
 	baseURL: 'https://api.yelp.com/v3',
 	headers: {
-		Authorization: 'Bearer '
+		Authorization: 'Bearer'
 	}
 });
 
@@ -16,7 +16,7 @@ class YelpService {
 					latitude: 30.266926,
 					longitude: -97.750519,
 					limit: 5,
-					radius: 100,
+					radius: 1000,
 					categories: 'restaurant'
 				}
 			})

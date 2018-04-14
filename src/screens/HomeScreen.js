@@ -17,7 +17,9 @@ export default class HomeScreen extends Component {
 
 	componentDidMount = async () => {
 		let businesses = await YelpService.getFoods();
-		businesses.map(bus => console.log(bus.name + " " + bus.image_url + " " + bus.categories[0].title + " " + bus.rating + " " + bus.price + " " + bus.phone + " " + bus.coordinates.latitude + " " + bus.coordinates.longitude));
+		businesses.map(bus => console.log(bus.name + " " + bus.image_url + " " + bus.categories[0].title + " " + 
+										  bus.rating + " " + bus.price + " " + bus.phone + " " + 
+										  bus.coordinates.latitude + " " + bus.coordinates.longitude));
 	};
 
 	getLocationAsync = async () => {
