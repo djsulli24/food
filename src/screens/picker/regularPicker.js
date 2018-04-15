@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { Component } from "react";
 import {
   Container,
@@ -30,9 +29,10 @@ class RegularPicker extends Component {
   postSelections = () => {
     console.log(this.state.cuisine);
     console.log(this.state.distance);
-    // saveSelections: function(selectionData) {
-    // return axios.post("/api/selection", selectionData);
-    // }
+    module.exports = {
+      cuisine: this.state.cuisine,
+      distance: this.state.distance
+    };
   };
 
   handleSubmit = event => {
