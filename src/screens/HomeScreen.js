@@ -15,13 +15,6 @@ export default class HomeScreen extends Component {
 		this.getLocationAsync();
 	}
 
-	componentDidMount = async () => {
-		let businesses = await YelpService.getFoods();
-		businesses.map(bus => console.log(bus.name + " " + bus.image_url + " " + bus.categories[0].title + " " + 
-										  bus.rating + " " + bus.price + " " + bus.phone + " " + 
-										  bus.coordinates.latitude + " " + bus.coordinates.longitude));
-	};
-
 	getLocationAsync = async () => {
 		let { status } = await Permissions.askAsync(Permissions.LOCATION);
 		if (status !== 'granted') {
@@ -31,6 +24,11 @@ export default class HomeScreen extends Component {
 		}
 
 		let location = await Location.getCurrentPositionAsync({});
+		console.log(location.coords)
+		let businesses = await YelpService.getFoods(location.coords);
+		businesses.map(bus => console.log(bus.name + " " + bus.image_url + " " + bus.categories[0].title + " " + 
+										  bus.rating + " " + bus.price + " " + bus.phone + " " + 
+										  bus.coordinates.latitude + " " + bus.coordinates.longitude));
 		this.setState({ location });
 	};
 

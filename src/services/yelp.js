@@ -1,23 +1,24 @@
 import axios from 'axios';
+import { Location , Permissions } from 'expo';
 //import config from '../config';
 
 const api = axios.create({
 	baseURL: 'https://api.yelp.com/v3',
 	headers: {
-		Authorization: 'Bearer'
+		Authorization: 'Bearer '
 	}
 });
 
 class YelpService {
-	getFoods() {
+	getFoods(location) {
 		return api
 			.get('/businesses/search', {
 				params: {
-					latitude: 30.266926,
-					longitude: -97.750519,
+					latitude: location.latitude,
+					longitude: location.longitude,
 					limit: 5,
 					radius: 1000,
-					categories: 'restaurant'
+					categories: 'recreation'
 				}
 			})
 			.then(res =>
