@@ -383,7 +383,7 @@ class SimpleDeck extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Restaurant Cards</Title>
+            <Title>Swipe</Title>
           </Body>
           <Right />
         </Header>
