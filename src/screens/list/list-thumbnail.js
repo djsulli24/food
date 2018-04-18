@@ -16,42 +16,30 @@ import {
 } from "native-base";
 import styles from "./styles";
 
-const sankhadeep = require("../../../assets/contacts/sankhadeep.png");
-const supriya = require("../../../assets/contacts/supriya.png");
-const himanshu = require("../../../assets/contacts/himanshu.png");
-const shweta = require("../../../assets/contacts/shweta.png");
-const shruti = require("../../../assets/contacts/shruti.png");
-const shivraj = require("../../../assets/contacts/shivraj.jpg");
+const jon = require("../../../assets/contacts/jon.png");
+const daniel = require("../../../assets/contacts/daniel.png");
+const ryan = require("../../../assets/contacts/ryan.png");
+const cecil = require("../../../assets/contacts/cecil.jpg");
 const datas = [
   {
-    img: sankhadeep,
-    text: "Sankhadeep",
-    note: "Its time to build a difference . ."
+    img: jon,
+    text: "Jonathan",
+    note: "Hopdoddy Burger Bar, Odd Duck"
   },
   {
-    img: supriya,
-    text: "Supriya",
-    note: "One needs courage to be happy and smiling all time . . "
+    img: daniel,
+    text: "Daniel",
+    note: "Odd Duck"
   },
   {
-    img: shivraj,
-    text: "Shivraj",
-    note: "Time changes everything . ."
+    img: cecil,
+    text: "Cecil",
+    note: "Sugar Mama's Bakeshop, Gourdough's Public House"
   },
   {
-    img: shruti,
-    text: "Shruti",
-    note: "The biggest risk is a missed opportunity !!"
-  },
-  {
-    img: himanshu,
-    text: "Himanshu",
-    note: "Live a life style that matchs your vision"
-  },
-  {
-    img: shweta,
-    text: "Shweta",
-    note: "Failure is temporary, giving up makes it permanent"
+    img: ryan,
+    text: "Ryan",
+    note: "Odd Duck, Magnolia Cafe South, Salty Sow"
   }
 ];
 
@@ -66,7 +54,7 @@ class NHListThumbnail extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>List Thumbnail</Title>
+            <Title>Selections</Title>
           </Body>
           <Right />
         </Header>
@@ -87,11 +75,6 @@ class NHListThumbnail extends Component {
                     {data.note}
                   </Text>
                 </Body>
-                <Right>
-                  <Button transparent>
-                    <Text>View</Text>
-                  </Button>
-                </Right>
               </ListItem>}
           />
         </Content>

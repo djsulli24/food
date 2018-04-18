@@ -383,7 +383,7 @@ class SimpleDeck extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Simple Deck Swiper</Title>
+            <Title>Restaurant Cards</Title>
           </Body>
           <Right />
         </Header>
@@ -394,7 +394,7 @@ class SimpleDeck extends Component {
               </View>} renderItem={item => <Card style={{ elevation: 3 }}>
                 <CardItem>
                   <Left>
-                    <Thumbnail source={item.image_url} />
+                    <Thumbnail source={{ uri: item.image_url}} />
                     <Body>
                       <Text>
                         {item.name}
@@ -404,7 +404,7 @@ class SimpleDeck extends Component {
                   </Left>
                 </CardItem>
                 <CardItem cardBody>
-                  <Image style={{ resizeMode: "cover", width: null, flex: 1, height: 300 }} source={item.image_url} />
+                  <Image style={{ resizeMode: "cover", width: null, flex: 1, height: 300 }} source={{uri: item.image_url}} />
                 </CardItem>
                 <CardItem>
                   <IconNB name={"ios-heart"} style={{ color: "#ED4A6A" }} />
